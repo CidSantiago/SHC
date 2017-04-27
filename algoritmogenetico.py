@@ -60,13 +60,19 @@ sizePop = 100
 maxGeneration = 1000
 rtCross = 1
 rtMut = 0.05
-maxDem = 200 #Valor Máximo de demanda energética
-limFunc = [0,maxDem] 
+maxDem = 200 #Demanda maxima contratada 
 custos = [[0.5, 0, 5],[1, 6, 16], [2, 16, 23]] #[preço, começo, termino]
-cargas = [[8,3],[7,2],[10,1],[0.5,12]]#[consumo, tempo]
+cargas = [[8,8],[7,8],[10,10],[0.5,1]] #[consumo, picoconsumo]
+user = [[[1],14,23], [[1,1,2], 14,23], [[2], 14,23], [[1,3], 14,23]] #[ [tempos], inicio minimo, termino maximo]
 
 
 # Criando População inicial
 
-curPop = np.random.choice(np.arange(0,24,1),size=(sizePop, len(cargas)))
+#curPop = np.random.choice(np.arange(0,24,1),size=(sizePop, len(cargas)))
+curPop = np.zeros(sizePop, len(cargas))
+curPop = curPop.tolist()
 
+# As etapas das cargas sempre sao em blocos? 
+for i in range(0, sizePop):
+    curPop[0] = 
+    
